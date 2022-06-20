@@ -1,7 +1,7 @@
-SRCS		= main.cpp
+SRCS		= main.cpp Harl.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
-NAME		= reference
+NAME		= harl
 CC			= g++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98

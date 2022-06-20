@@ -1,7 +1,7 @@
 SRCS		= main.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
-NAME		= zombie
+NAME		= sed
 CC			= g++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98
