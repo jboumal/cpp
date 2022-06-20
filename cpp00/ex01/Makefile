@@ -4,7 +4,7 @@ OBJS		= ${SRCS:.cpp=.o}
 NAME		= phonebook
 CC			= g++
 RM			= rm -f
-CPPFLAGS		= -Wall -Wextra -Werror -Iinclude -std=c++98
+CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98
 
 $(NAME):		$(OBJS)
 				$(CC) $(CPPFLAGS) -o $(NAME) $(OBJS)

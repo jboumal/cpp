@@ -13,7 +13,7 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 # include <string>
-using namespace std;
+typedef std::string string;
 
 class Contact {
 
@@ -21,14 +21,20 @@ public:
 	Contact(void);
 	~Contact(void);
 
-	void create_contact(string s1, string s2, string s3, string s4, string s5);
+	void	add_contact(void);
+	void	print_overview(void) const;
+	void	print_info(void) const;
+	bool	is_set(void) const;
 
 private:
+	bool	set;
 	string	first_name;
 	string	last_name;
 	string	nickname;
 	string	phone_number;
 	string	darkest_secret;
+
+	void	print_ten(string str) const;
 };
 
 #endif

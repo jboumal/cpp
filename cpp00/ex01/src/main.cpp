@@ -11,36 +11,30 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-void add()
-{
-	
-}
-
-void search()
-{
-	
-}
-
 int main(void)
 {
-	char    buff[512];
+	string    line;
+	PhoneBook phonebook;
+
+	std::cout << "Welcome into the amazing PhoneBook" << std::endl;
 	while (1)
 	{
 		std::cout << "You are in PhoneBook. Input action ADD, SEARCH or EXIT" << std::endl;
 		std::cout << "Input next action: ";
-		std::cin >> buff;
-		if (strcmp(buff, "ADD") == 0 || strcmp(buff, "add") == 0)
+		std::getline(std::cin, line);
+		if (line.compare("ADD") == 0 || line.compare("add") == 0)
 		{
-			add();
+			phonebook.add_contact();
 		}
-		else if (strcmp(buff, "SEARCH") == 0 || strcmp(buff, "search") == 0)
+		else if (line.compare("SEARCH") == 0 || line.compare("search") == 0)
 		{
-			search();
+			phonebook.search_contact();
 		}
-		else if (strcmp(buff, "EXIT") == 0 || strcmp(buff, "exit") == 0)
+		else if (line.compare("EXIT") == 0 || line.compare("exit") == 0)
 		{
 			return (0);
 		}

@@ -21,11 +21,11 @@ public:
 	~PhoneBook(void);
 
 	void	add_contact(void);
-	void	get_contact(int id) const;
+	void	search_contact(void) const;
 
 private:
 	Contact	contacts[8];
-	int		contact_count;
+	int		id;
 };
 
 #endif

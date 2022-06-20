@@ -1,13 +1,13 @@
-SRCS		= megaphone.c
+SRCS		= Account.cpp tests.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
-OBJS		= ${SRCS:.c=.o}
-NAME		= megaphone
+OBJS		= ${SRCS:.cpp=.o}
+NAME		= account
 CC			= g++
 RM			= rm -f
-CFLAGS		= -Wall -Wextra -Werror -Iinclude
+CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+				$(CC) $(CPPFLAGS) -o $(NAME) $(OBJS)
 all:			$(NAME)
 clean:
 				${RM} ${OBJS}
