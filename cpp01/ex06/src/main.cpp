@@ -14,8 +14,6 @@
 
 int	main( int argc, char **argv )
 {
-	Harl harl;
-
 	if (argc != 2)
 	{
 		std::cout << "Harl Filter needs filter level as argument" << std::endl;
@@ -23,44 +21,29 @@ int	main( int argc, char **argv )
 	}
 	else
 	{
+		Harl harl;
 		std::string	filter(argv[1]);
 		std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-		for (int i = 0; i < 4; i++)
+		int	i;
+		for (i = 0; i < 4; i++)
 		{
-			if (filter.compare(level[i]))
+			if (filter.compare(levels[i]) == 0)
 				break ;
 		}
 		switch (i)
 		{
 			case 0:
-			{
 				harl.complain("DEBUG");
+			case 1:
 				harl.complain("INFO");
+			case 2:
 				harl.complain("WARNING");
+			case 3:
 				harl.complain("ERROR");
 				break;
-			}
-			case 1:
-			{
-				harl.complain("INFO");
-				harl.complain("WARNING");
-				harl.complain("ERROR");
-			}
-			case 2:
-			{
-				harl.complain("INFO");
-				harl.complain("WARNING");
-				harl.complain("ERROR");
-			}
-			case 3:
-			{
-				harl.complain("ERROR");
-			}
-			case 4:
-			{
-				std::cout;
-			}
-
+			default:
+				std::cout << "Filter not found" << std::endl;
+				break;
 		}
 		return(0);
 	}
