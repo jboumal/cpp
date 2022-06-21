@@ -44,19 +44,27 @@ bool	Fixed::operator!=( Fixed const & rhs ) const
 
 Fixed	Fixed::operator+( Fixed const & rhs ) const
 {
-	return Fixed(this->getRawBits() + rhs.getRawBits());
+	Fixed f;
+	f.setRawBits(this->getRawBits() + rhs.getRawBits());
+	return f;
 }
 Fixed	Fixed::operator-( Fixed const & rhs ) const
 {
-	return Fixed(this->getRawBits() - rhs.getRawBits());
+	Fixed f;
+	f.setRawBits(this->getRawBits() - rhs.getRawBits());
+	return f;
 }
 Fixed	Fixed::operator*( Fixed const & rhs ) const
 {
-	return Fixed(this->getRawBits() * rhs.getRawBits());
+	Fixed f;
+	f.setRawBits((this->getRawBits() * rhs.getRawBits()) >> _nbits);
+	return f;
 }
 Fixed	Fixed::operator/( Fixed const & rhs ) const
 {
-	return Fixed(this->getRawBits() / rhs.getRawBits());
+	Fixed f;
+	f.setRawBits((this->getRawBits() << _nbits) / rhs.getRawBits());
+	return f;
 }
 /* Increment/decrement operator*/
 
