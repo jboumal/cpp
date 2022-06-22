@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jboumal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 14:33:26 by jboumal           #+#    #+#             */
-/*   Updated: 2022/06/22 11:43:58 by jboumal          ###   ########.fr       */
+/*   Created: 2022/06/22 12:22:26 by jboumal           #+#    #+#             */
+/*   Updated: 2022/06/22 12:22:28 by jboumal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Point.hpp"
 
-Zombie* zombieHorde( int N, std::string name );
-
-void randomChump( std::string name )
+Point::Point ( void )
 {
-	Zombie zombie(name);
-	zombie.announce();
 }
 
-Zombie* newZombie( std::string name )
+Point::~Point ( void )
 {
-	Zombie *zombie = new Zombie(name);
-	return (zombie);
 }
 
-int	main( void )
+Point::Point ( float a, float b ) : x(a), y(b)
 {
-	const int n = 5;
-	Zombie	*horde;
+}
 
-	horde = zombieHorde(n, "Albert");
-	for (int i = 0; i < n; i++)
-	{
-		horde[i].announce();
-	}
-	delete [] horde;
-	return (0);
+Point::Point(Point const & src) : x(src.x), y(src.y)
+{
+}
+	
+const Fixed & Point::getx( void ) const
+{
+	return (x);
+}
+const Fixed & Point::gety( void ) const
+{
+	return (y);
+}
+
+Point &	Point::operator=( Point & rhs )
+{
+	return (rhs);
 }

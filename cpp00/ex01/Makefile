@@ -2,7 +2,7 @@ SRCS		= Contact.cpp PhoneBook.cpp main.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
 NAME		= phonebook
-CC			= g++
+CC			= c++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98
 

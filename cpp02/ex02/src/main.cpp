@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Fixed.hpp"
+#include "Fixed.hpp"
 
 #include <iostream>
 int main( void ) {
 	Fixed a;
 
 	std::cout << "Test arithmetic operators" <<std::endl;
-	Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
+	Fixed b( Fixed( 5.05f ) + Fixed( 2 ) );
 	Fixed const c( Fixed( 5.05f ) - Fixed( 2 ) );
 	Fixed const d( Fixed( 5.05f ) * Fixed( 2 ) );
 	Fixed const e( Fixed( 5.05f ) / Fixed( 2 ) );
@@ -45,6 +45,10 @@ int main( void ) {
 	std::cout << (a >= a) << std::endl;
 	std::cout << (a > a) << std::endl;
 
-	//std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << "Test min/max functions" <<std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::max( a, c ) << std::endl;
+	std::cout << Fixed::min( c, d ) << std::endl;
+
 	return 0;
 }

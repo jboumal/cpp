@@ -2,7 +2,7 @@ SRCS		= main.cpp Zombie.cpp zombieHorde.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
 NAME		= zombie
-CC			= g++
+CC			= c++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98
 

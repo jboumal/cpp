@@ -6,7 +6,7 @@
 /*   By: jboumal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:33:26 by jboumal           #+#    #+#             */
-/*   Updated: 2022/06/20 14:33:27 by jboumal          ###   ########.fr       */
+/*   Updated: 2022/06/22 11:44:50 by jboumal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	main( void )
 	std::cout << "Address held by stringREF is: " << &stringREF << std::endl;
 
 	std::cout << "Value of the string variable is: " << str << std::endl;
-	std::cout << "Value pointed to by  stringPTR is: " << *stringPTR << std::endl;
-	std::cout << "Value pointed to by  stringREF is: " << stringREF << std::endl;
+	std::cout << "Value pointed to by stringPTR is: " << *stringPTR << std::endl;
+	std::cout << "Value pointed to by stringREF is: " << stringREF << std::endl;
 }

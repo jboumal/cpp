@@ -1,7 +1,7 @@
-SRCS		= main.cpp Zombie.cpp
+SRCS		= main.cpp Fixed.cpp Point.cpp bsp.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
-NAME		= zombie
+NAME		= canon
 CC			= c++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98

@@ -6,7 +6,7 @@
 /*   By: jboumal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:43:14 by jboumal           #+#    #+#             */
-/*   Updated: 2022/06/20 18:43:16 by jboumal          ###   ########.fr       */
+/*   Updated: 2022/06/22 11:49:17 by jboumal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main( int argc, char **argv )
 {
 	if (argc != 2)
 	{
-		std::cout << "Harl Filter needs filter level as argument" << std::endl;
+		std::cout << "Harl Filter takes one argument" << std::endl;
 		return(1);
 	}
 	else

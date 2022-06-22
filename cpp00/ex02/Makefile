@@ -2,7 +2,7 @@ SRCS		= Account.cpp tests.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
 NAME		= account
-CC			= g++
+CC			= c++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98
 

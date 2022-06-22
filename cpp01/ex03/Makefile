@@ -2,7 +2,7 @@ SRCS		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
 NAME		= humans
-CC			= g++
+CC			= c++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98
 
