@@ -1,4 +1,4 @@
-SRCS		= main.cpp ClapTrap.cpp
+SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
 NAME		= claptrap

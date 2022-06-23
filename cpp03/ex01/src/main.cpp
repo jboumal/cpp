@@ -11,18 +11,22 @@
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main ( void )
-{ 
-	ScavTrap claptrap("Scav");
-	claptrap.attack("bird");
-	claptrap.takeDamage(5);
+{
+	ScavTrap scavtrap;
+	ScavTrap scavtrap2 (scavtrap);
+	scavtrap.attack("bird");
+	scavtrap.takeDamage(5);
 	for (int i = 0; i < 10; i++)
 	{
-		claptrap.beRepaired(10);
+		scavtrap.beRepaired(10);
 	}
-	claptrap.attack("bird");
-	claptrap.takeDamage(200);
-	claptrap.beRepaired(10);
-	claptrap.attack("bird");
+	scavtrap.attack("bird");
+	scavtrap.takeDamage(200);
+	scavtrap.beRepaired(10);
+	scavtrap2.attack("bird");
+	scavtrap2 = scavtrap;
+	scavtrap2.attack("bird");
 }
