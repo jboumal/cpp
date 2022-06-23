@@ -1,4 +1,4 @@
-SRCS		= main.cpp Zombie.cpp
+SRCS		= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
 NAME		= zombie
