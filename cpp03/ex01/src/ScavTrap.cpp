@@ -48,3 +48,20 @@ ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs )
 
 	return (*this);
 }
+
+void ScavTrap::guardGate( void )
+{
+	if (_hit_points <= 0)
+	{
+		std::cout << "ScavTrap " << "*" << _name << " is just a butch of scratch " << "*" << std::endl;
+	}
+	else
+	{
+		std::cout << "ScavTrap " << _name << " is in Gate keeper mode";
+		if (_energy_points <= 0)
+		{
+			std::cout << " but he needs a new battery";
+		}
+		std::cout << std::endl;
+	}
+}

@@ -23,6 +23,7 @@ public:
 	ScavTrap( ScavTrap & src);
 	~ScavTrap( void );
 	ScavTrap &	operator=( ScavTrap const & rhs );
+	void guardGate( void );
 
 private:
 

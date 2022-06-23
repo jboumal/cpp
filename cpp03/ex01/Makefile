@@ -1,7 +1,7 @@
 SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
-NAME		= claptrap
+NAME		= scavtrap
 CC			= c++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude -std=c++98

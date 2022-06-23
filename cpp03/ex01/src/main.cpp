@@ -27,6 +27,8 @@ int main ( void )
 	scavtrap.takeDamage(200);
 	scavtrap.beRepaired(10);
 	scavtrap2.attack("bird");
+	scavtrap2.guardGate();
 	scavtrap2 = scavtrap;
 	scavtrap2.attack("bird");
+	scavtrap2.guardGate();
 }
