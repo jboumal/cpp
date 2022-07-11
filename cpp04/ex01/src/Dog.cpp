@@ -21,7 +21,6 @@ Dog::Dog( void )
 Dog::Dog( Dog & src)
 {
 	std::cout << "Dog copy constructed" << std::endl;
-	brain = new Brain(*(src.brain));
 	*this = src;
 }
 Dog::~Dog( void )

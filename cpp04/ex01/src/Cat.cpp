@@ -21,7 +21,6 @@ Cat::Cat( void )
 Cat::Cat( Cat & src)
 {
 	std::cout << "Cat copy constructed" << std::endl;
-	brain = new Brain(*(src.brain));
 	*this = src;
 }
 Cat::~Cat( void )
