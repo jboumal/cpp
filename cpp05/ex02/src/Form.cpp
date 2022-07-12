@@ -16,18 +16,18 @@ Form::Form ( void ) :
 	_name("default form"), _signed(false), _sign_grade(150), _execute_grade(150)
 {
 }
-Form::Form ( std::string name, int sign_grade, int execute_grade) : 
-	_name(name), _signed(false), _sign_grade(sign_grade), _execute_grade(execute_grade)
+Form::~Form ( void )
+{
+}
+Form::Form ( std::string name, int sign_grade, int execute_grade, std::string target) : 
+	_name(name), _signed(false), _sign_grade(sign_grade), _execute_grade(execute_grade), _target(target)
 {
 	if (sign_grade < 1 || execute_grade < 1)
 		throw(Bureaucrat::GradeTooHighException());
 	if (sign_grade > 150 || execute_grade > 150)
 		throw(Bureaucrat::GradeTooLowException());	
 }
-Form::~Form( void )
-{
-}
-Form::Form(Form & src) : _name(src._name), _sign_grade(src._sign_grade)
+Form::Form(Form & src) : _name(src._name), _sign_grade(src._sign_grade), _target(src._target)
 {
 	*this = src;
 }
@@ -37,10 +37,13 @@ Form & Form::operator=(Form const & rhs)
 	_execute_grade = rhs._execute_grade;
 	return *this;
 }
-
 const std::string	Form::getName() const
 {
 	return _name;
+}
+const std::string	Form::getTarget() const
+{
+	return _target;
 }
 bool	Form::isSigned() const
 {
@@ -66,7 +69,21 @@ void	Form::beSigned(Bureaucrat & bureaucrat)
 		_signed = true;
 	}
 }
-
+void	Form::execute(Bureaucrat const & executor) const
+{
+	if (!isSigned())
+	{
+		throw (Form::UnsignedFormException());
+	}
+	if (executor.getGrade() > getExecuteGrade())
+	{
+		throw (Bureaucrat::GradeTooLowException());
+	}
+}
+const char * Form::UnsignedFormException::what() const throw()
+{
+	return ("Form is unsigned");
+}
 std::ostream &	operator<<( std::ostream & o, Form const & f )
 {
 	if (f.isSigned())
