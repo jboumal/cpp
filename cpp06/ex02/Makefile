@@ -1,7 +1,7 @@
 SRCS		= main.cpp identify.cpp generate.cpp A.cpp B.cpp C.cpp
 SRCS		:= $(addprefix src/,$(SRCS)) 
 OBJS		= ${SRCS:.cpp=.o}
-NAME		= serializer
+NAME		= identifier
 CC			= c++
 RM			= rm -f
 CPPFLAGS	= -Wall -Wextra -Werror -Iinclude
