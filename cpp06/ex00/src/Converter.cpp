@@ -88,7 +88,7 @@ bool	Converter::isIntDisp( void ) const
 }
 std::ostream &	operator<<( std::ostream & o, Converter const & c )
 {
-	std::cout << std::setprecision(18);
+	std::cout << std::setprecision(12);
 	if (!isascii(c.getChar()))
 	{
 		o << "char: impossible" << std::endl;
@@ -109,8 +109,13 @@ std::ostream &	operator<<( std::ostream & o, Converter const & c )
 	{
 		o << "int: Not displayable" << std::endl;
 	}
-	o << "float: " << c.getFloat()  << "f" << std::endl;
+	o << "float: " << c.getFloat();
+	if (c.getInt() == c.getFloat())
+		o << ".0";
+	o << "f" << std::endl;
 	o << "double: " << c.getDouble();
+	if (c.getInt() == c.getDouble())
+		o << ".0";
 	return (o);
 }
 bool isInt( std::string val)
