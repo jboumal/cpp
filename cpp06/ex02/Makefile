@@ -1,0 +1,17 @@
+SRCS		= main.cpp identify.cpp generate.cpp A.cpp B.cpp C.cpp
+SRCS		:= $(addprefix src/,$(SRCS)) 
+OBJS		= ${SRCS:.cpp=.o}
+NAME		= serializer
+CC			= c++
+RM			= rm -f
+CPPFLAGS	= -Wall -Wextra -Werror -Iinclude
+
+$(NAME):		$(OBJS)
+				$(CC) $(CPPFLAGS) -o $(NAME) $(OBJS)
+all:			$(NAME)
+clean:
+				${RM} ${OBJS}
+fclean:			clean
+				${RM} $(NAME)
+re:				fclean all
+.PHONY:			all clean fclean re
