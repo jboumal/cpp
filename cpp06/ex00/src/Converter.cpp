@@ -88,7 +88,6 @@ bool	Converter::isIntDisp( void ) const
 }
 std::ostream &	operator<<( std::ostream & o, Converter const & c )
 {
-	std::cout << std::setprecision(12);
 	if (!isascii(c.getChar()))
 	{
 		o << "char: impossible" << std::endl;
