@@ -15,6 +15,11 @@
 Converter::Converter( std::string val )
 {
 	_int_disp = true;
+
+	if (val.length() == 0)
+	{
+		throw std::exception();
+	}
 	if (val.length() == 1 && isascii(val[0]) && !isdigit(val[0]))
 	{
 		_val_char = val[0];
@@ -29,7 +34,7 @@ Converter::Converter( std::string val )
 		_val_float = static_cast<float>(_val_int);
 		_val_double = static_cast<double>(_val_int);
 	}
-	else if (val[val.length() - 1] == 'f')
+	else if (isFloat(val))
 	{
 		_val_float = std::stof(val);
 		if (isnan(_val_float) || isinf(_val_float))
@@ -40,7 +45,7 @@ Converter::Converter( std::string val )
 		_val_char = static_cast<char>(_val_int);
 		_val_double = static_cast<double>(_val_float);
 	}
-	else
+	else if (isDouble(val))
 	{
 		_val_double = std::stod(val);
 		if (isnan(_val_double) || isinf(_val_double))
@@ -50,6 +55,10 @@ Converter::Converter( std::string val )
 		_val_int = static_cast<int>(_val_double);
 		_val_char = static_cast<char>(_val_int);
 		_val_float = static_cast<float>(_val_double);
+	}
+	else
+	{
+		throw std::exception();
 	}
 }
 Converter::~Converter( void )
@@ -122,12 +131,75 @@ bool isInt( std::string val)
 	unsigned long i = 0;
 	if (val[0] == '-')
 		i++;
-	if (val.length() == 0 || (val.length() == 1 && i == 1))
+	if (val.length() == 1 && i == 1)
 		return false;
 	while (i < val.length())
 	{
 		if (!isdigit(val[i]))
 			return false;
+		i++;
+	}
+	return true;
+}
+
+bool isFloat( std::string val)
+{
+	unsigned long i = 0;
+	if (val[0] == '-')
+		i++;
+	if (val.length() == 1 && i == 1)
+		return false;
+	while (i < val.length())
+	{
+		if (!isdigit(val[i]))
+		{
+			if (val[i] != '.')
+				return false;
+			else
+				break ;
+		}
+		i++;
+	}
+	i++;
+	while (i < val.length())
+	{
+		if (!isdigit(val[i]))
+		{
+			if (val[i] == 'f' && i == val.length() - 1)
+				return true;
+			else
+				break ;
+		}
+		i++;
+	}
+	return false;
+}
+
+bool isDouble( std::string val)
+{
+	unsigned long i = 0;
+	if (val[0] == '-')
+		i++;
+	if (val.length() == 1 && i == 1)
+		return false;
+	while (i < val.length())
+	{
+		if (!isdigit(val[i]))
+		{
+			if (val[i] != '.')
+				return false;
+			else
+				break ;
+		}
+		i++;
+	}
+	i++;
+	while (i < val.length())
+	{
+		if (!isdigit(val[i]))
+		{
+			return false;
+		}
 		i++;
 	}
 	return true;

@@ -44,5 +44,8 @@ private:
 
 std::ostream &	operator<<( std::ostream & o, Converter const & c );
 bool isInt( std::string val);
+bool isFloat( std::string val);
+bool isDouble( std::string val);
+
 
 #endif

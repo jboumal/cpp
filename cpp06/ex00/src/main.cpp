@@ -14,6 +14,8 @@
 
 int	main( int argc, char **argv )
 {
+	//std::cout << std::setprecision(18);
+
 	if (argc == 2)
 	{
 		try
