@@ -16,9 +16,12 @@
 template< typename T >
 void	iter( T *array, int len, void (*fct)(T &))
 {
+	if (!array)
+		return ;
 	for (int i = 0; i < len; i++)
 	{
-		fct(array[i]);
+		if (fct)
+			fct(array[i]);
 	}
 }
 
