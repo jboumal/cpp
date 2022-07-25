@@ -145,6 +145,8 @@ bool isInt( std::string val)
 bool isFloat( std::string val)
 {
 	unsigned long i = 0;
+	if (!val.compare("+inff") || !val.compare("-inff") || !val.compare("nanf"))
+		return true;
 	if (val[0] == '-')
 		i++;
 	if (val.length() == 1 && i == 1)
@@ -178,6 +180,8 @@ bool isFloat( std::string val)
 bool isDouble( std::string val)
 {
 	unsigned long i = 0;
+	if (!val.compare("+inf") || !val.compare("-inf") || !val.compare("nan"))
+		return true;
 	if (val[0] == '-')
 		i++;
 	if (val.length() == 1 && i == 1)
@@ -197,9 +201,7 @@ bool isDouble( std::string val)
 	while (i < val.length())
 	{
 		if (!isdigit(val[i]))
-		{
 			return false;
-		}
 		i++;
 	}
 	return true;
