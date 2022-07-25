@@ -95,15 +95,3 @@ T*	Array<T>::getEl( void ) const
 }
 
 #endif
-
-/*
-
-• Construction by copy and assignment operator. In both cases, modifying either the
-original array or its copy after copying musn’t affect the other array.
-• You MUST use the operator new[] to allocate memory. Preventive allocation (allocating memory in advance) is forbidden. Your program must never access nonallocated memory.
-• Elements can be accessed through the subscript operator: [ ].
-• When accessing an element with the [ ] operator, if its index is out of bounds, an
-std::exception is thrown.
-• A member function size() that returns the number of elements in the array. This
-member function takes no parameter and musn’t modify the current instance.
-*/
