@@ -14,7 +14,7 @@
 # define EASYFIND_HPP
 # include <algorithm>
 # include <iterator>
-#include <iostream>
+# include <iostream>
 
 template < typename T >
 typename T::iterator	easyfind( T & t, int i )
