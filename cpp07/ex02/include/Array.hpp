@@ -51,7 +51,8 @@ Array<T>::~Array()
 template <class T>
 Array<T>::Array( Array<T> const & src )
 {
-	*src = this;
+	_array = NULL;
+	*this = src;
 }
 
 template <class T>
@@ -61,7 +62,7 @@ Array<T> & Array<T>::operator=( Array<T> const & rhs)
 	{
 		delete[] _array;
 	}
-	_len = rhs.len;
+	_len = rhs._len;
 	_array = new T[_len];
 	for (int i = 0; i < _len; i++)
 	{
