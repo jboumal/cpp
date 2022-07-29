@@ -11,14 +11,19 @@
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <vector>
 
 int	main( void )
 {
-	Span sp(10);
+	Span	sp(10);
+	int	array[3] =  {10, 0, -10};
+	std::vector<int> numbers;
+	for (int i = 0; i < 3; i++)
+	{
+		numbers.push_back(array[i]);
+	}
 
-	sp.addNumber(-10);
-	sp.addNumber(0);
-	sp.addNumber(10);
+	sp.addNumbers(numbers.begin(), numbers.end());
 	std::cout << sp << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 	std::cout << sp.shortestSpan() << std::endl;

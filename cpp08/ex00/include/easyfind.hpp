@@ -22,4 +22,9 @@ typename T::iterator	easyfind( T & t, int i )
 	return(std::find(t.begin(), t.end(), i));
 }
 
+template < typename T >
+typename T::const_iterator	easyfind( T const & t, int i )
+{
+	return(std::find(t.begin(), t.end(), i));
+}
 #endif

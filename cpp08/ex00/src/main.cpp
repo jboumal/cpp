@@ -12,14 +12,11 @@
 
 #include "easyfind.hpp"
 #include <iostream>
-#include <list>
+#include <vector>
 
 int	main( void )
 {
-	std::list<int> lst;
-	lst.push_back(4);
-	lst.push_back(8);
-	lst.push_back(1);
+	const std::vector<int> lst(3, 8);
 
 	if (easyfind(lst, 8) != lst.end())
 		std::cout << "element found !" << std::endl;

@@ -52,6 +52,10 @@ void	Span::addNumber(int n)
 		_v.push_back(n);
 	}
 }
+void	Span::addNumbers( std::vector<int>::iterator b,  std::vector<int>::iterator e)
+{
+	_v.insert ( _v.end(), b, e);
+}
 std::vector<int> Span::getV( void ) const
 {
 	return (_v);

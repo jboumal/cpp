@@ -14,6 +14,7 @@
 # define SPAN_HPP
 # include <vector>
 # include <algorithm>
+# include <iterator>
 # include "iostream"
 
 class Span {
@@ -25,7 +26,8 @@ public:
 	Span( const Span & src );
 	Span & operator=( Span const & rhs );
 
-	void addNumber(int n);
+	void	addNumber(int n);
+	void	addNumbers( std::vector<int>::iterator b,  std::vector<int>::iterator e);
 	std::vector<int> getV( void ) const;
 	unsigned int	shortestSpan( void ) const;
 	unsigned int	longestSpan( void ) const;
